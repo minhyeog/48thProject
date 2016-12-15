@@ -43,10 +43,10 @@
     </select>
 
 <!-- 식품조회 -->
-   <select id="selectIngredList" flushCache="false"  useCache="true" resultType="IngredBean">
-        SELECT
-            i.INGRED_GRP_CD,
-            i.INGRED_CD,
+ <select id="selectIngredList" flushCache="false"  useCache="true"  resultType="IngredBean">
+ SELECT
+            i.INGRED_GRP_CD as ingredGrpCd,
+            i.INGRED_CD as ingredCd,
             i.INGRED_NM,
             i.SPEC,
             i.UNIT,
@@ -82,6 +82,7 @@
             i.NUTRIT18,
             i.NUTRIT22,
             i.NUTRIT23,
+            I.NUTRIT24,
             i.NUTRIT25,
             g.SPLIES_DIV,
             g.CTRT_PRICE,
@@ -94,8 +95,7 @@
             SN_INGRED i
         WHERE
             G.GDS_CD=I.INGRED_CD
-
-        <if test="ingredGrpCd != null">
+      <if test="ingredGrpCd != null">
             AND i.INGRED_GRP_CD = #{ingredGrpCd}
         </if>
 
@@ -106,7 +106,6 @@
         <if test="ingredNm != null">
             AND i.INGRED_NM LIKE '%'||#{ingredNm}||'%'
         </if>
-
     </select>
 
 	<update id="insertIngred">
@@ -236,7 +235,6 @@ INGRED_GRP_CD
 		HOSPCLS=#{hospcls},
 		ADD_YN=#{addYn}
 		where INGRED_CD=#{ingredCd}
-
 	</update>
 
 	<delete id="deleteIngred">

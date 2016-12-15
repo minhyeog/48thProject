@@ -50,7 +50,10 @@
       <package name="com.seoul.his.hrs.appoint.to" />            <!-- 발령관리 -->
       <package name="com.seoul.his.hrs.emp.to" />               <!-- 인사관리 -->
 
-
+<!--  회계 -->
+	   <package name="com.seoul.his.acc.elementary.to" />         <!-- 기본 -->
+       <package name="com.seoul.his.acc.resol.to" />				<!--  결의서 -->
+       <package name="com.seoul.his.acc.slip.to" />				<!-- 전표 -->
 
 
    </typeAliases>

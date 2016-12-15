@@ -44,7 +44,8 @@ public class IngredController {
 
 	@RequestMapping("msv/sup/hosptaldiet/findIngredList.do")
 	public void findIngredList(HttpServletRequest request, HttpServletResponse response) throws Exception{
-	    PlatformData inData = (PlatformData) request.getAttribute("inData");
+	    System.out.println("controller도착");
+		PlatformData inData = (PlatformData) request.getAttribute("inData");
 		PlatformData outData = (PlatformData) request.getAttribute("outData");
 		Map<String, String> argsMap = dataSetBeanMapper.variablesToMap(inData);
 		List<IngredBean> ingredCodeList = hosptaldietServiceFacade.findIngredList(argsMap);
@@ -55,7 +56,7 @@ public class IngredController {
 	    PlatformData inData = (PlatformData) request.getAttribute("inData");
 		List<IngredBean> ingredList = dataSetBeanMapper.datasetToBeans(inData, IngredBean.class);
 		hosptaldietServiceFacade.batchIngredProcess(ingredList);
-		System.out.println("컨트롤러");
+
 	}
 
 

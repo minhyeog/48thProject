@@ -9,10 +9,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * @Package  com.seoul.his.sup.nutritive.to
+ * @Package  com.seoul.his.msv.sup.hosptaldiet.to
  * @Class    IngredBean.java
- * @Create   2016. 09. 05.
- * @Author   YonG
+ * @Create   2016. 12. 08.
+ * @Author   응디꿍디
  * @Description   식품 Bean
  *
  * @LastUpdated
